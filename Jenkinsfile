@@ -1,7 +1,7 @@
 pipeline {
    agent none
    stages {
-       stage('Clear folder 1') {
+       stage('Clear folder') {
           parallel {
               stage('Clear folder 1') {
                     steps {
@@ -35,7 +35,7 @@ pipeline {
                     '''
                 }
              }
-            stage('new Folders 1') {
+            stage('new Folders 2') {
                 steps {
                 bat '''
                     cd C:/Users/Dell/Desktop/jenkin2
@@ -58,7 +58,7 @@ pipeline {
                     '''
                 }
             }
-            stage('Clone new git 1') {
+            stage('Clone new git 2') {
                     steps {
                         bat '''
                         cd C:/Users/Dell/Desktop/jenkin2
