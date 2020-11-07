@@ -1,0 +1,37 @@
+# For windown:
+Using terminal:  bat 
+```
+pipeline {
+   agent any
+
+   stages {
+       stage('Clear folder') {
+         steps {
+            bat  '''
+                echo "Success to locate C"
+            '''
+         }
+      }
+   }
+}
+
+```
+# For mac/ linux:
+Using terminal:  sh  
+
+```
+pipeline {
+   agent any
+
+   stages {
+       stage('Clear folder') {
+         steps {
+            sh  '''
+                echo "Success to locate C"
+            '''
+         }
+      }
+   }
+}
+
+```
