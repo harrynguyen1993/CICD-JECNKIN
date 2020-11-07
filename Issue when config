@@ -10,3 +10,5 @@
  - For Jenkins 2.121.3 version, Go to Manage jenkins -> Global tool configuration -> Git installations -> Path to Git executable: C:\Program Files\Git\bin\git.exe It works!
  -  https://stackoverflow.com/questions/8639501/jenkins-could-not-run-git
  ```
+# Send Email 
+- https://medium.com/@gustavo.guss/jenkins-sending-email-on-post-build-938b236545d2#:~:text=To%20send%20email%2C%20the%20plugin,My%20configuration%20with%20gmail%20smtp.
