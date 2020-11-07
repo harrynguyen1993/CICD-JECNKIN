@@ -1,0 +1,12 @@
+
+# Error in jeckin windown when run 
+```
+ https://stackoverflow.com/questions/15135771/hudson-on-windows-error-java-io-ioexception-cannot-run-program-sh
+  cinst gnuwin git
+```
+
+# Fix issue get from git 
+```
+ - For Jenkins 2.121.3 version, Go to Manage jenkins -> Global tool configuration -> Git installations -> Path to Git executable: C:\Program Files\Git\bin\git.exe It works!
+ -  https://stackoverflow.com/questions/8639501/jenkins-could-not-run-git
+ ```
