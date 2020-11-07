@@ -1,5 +1,9 @@
 pipeline {
+    environment {
+        SERVER = "luan.nguy"
+    }
    agent any
+   
    stages {
        stage('Clear folder') {
           parallel {
@@ -77,6 +81,18 @@ pipeline {
                 bat '''
                 echo "Done"
                 '''
+            }
+        }
+     
+      stage ('Send Email'){
+       post {
+        always {
+            echo 'I will always say Hello again!'
+            
+           emailext body: "${SERVER} ${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+               }
             }
         }
    }
