@@ -41,13 +41,14 @@ pipeline {
                             choices: ['No', 'Yes'],
                             description: 'some description',
                             name: 'some name')]
-            ) == 'Yes'
+                        ) == 'Yes'
                   }
                   catch(exp)
                   {
                       bat 'echo "Error when confirm"'
                   }
             }
+          }
         }
       stage('Create new Folders') {
          parallel {
