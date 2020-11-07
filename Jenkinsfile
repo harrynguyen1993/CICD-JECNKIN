@@ -31,6 +31,8 @@ pipeline {
       }
         stage ('Deploy To Prod'){
              steps {
+              script{
+                  try {
                isApproved = input(
                     id: 'someId',
                     message: 'Approve?',
@@ -40,6 +42,11 @@ pipeline {
                             description: 'some description',
                             name: 'some name')]
             ) == 'Yes'
+                  }
+                  catch(exp)
+                  {
+                      bat 'echo "Error when confirm"'
+                  }
             }
         }
       stage('Create new Folders') {
