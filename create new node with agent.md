@@ -1,3 +1,4 @@
+```
 node {
     stage("Stage 1") {
         echo "Stage 1 : Hello word demo"
@@ -24,3 +25,4 @@ node ('auto_luan2'){
         sh 'hostname; touch file.agent2'
     }
 }
+```
