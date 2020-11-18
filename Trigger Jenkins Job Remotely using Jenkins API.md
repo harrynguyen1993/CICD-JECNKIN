@@ -1,4 +1,4 @@
-#Trigger Jenkins Job Remotely using Jenkins API
+# Trigger Jenkins Job Remotely using Jenkins API
 
 ```
 1. Create new pipele line with name is "helloword"
@@ -9,22 +9,22 @@
   - Not parameters
 
 ```
-#Create new pipele line with name is helloword
+# Create new pipele line with name is helloword
 
-#Create an authentication token for a job
-##1. Goto Configure
-##2. At API token 
+# Create an authentication token for a job
+## 1. Goto Configure
+## 2. At API token 
     - Find the “Add new Token” button and click on it.
     - Find the “Generate” and save the ${token}
 
-#Configure a job to trigger from remote
-##1. Goto job helloword
-##2. Enable Trigger builds remotely and inout token
+# Configure a job to trigger from remote
+## 1. Goto job helloword
+## 2. Enable Trigger builds remotely and inout token
     - input Authentication Token ${token}
     
-#Trigger the job form remote resource
+# Trigger the job form remote resource
 
-##1. Not parameters 
+## 1. Not parameters 
   - Open post man and create a new POST request 
    ```
    curl --location --request POST 'http://192.168.1.55:8080/job/helloword/build' \
@@ -36,7 +36,7 @@
       - Username: luannt
       - Password: 11aa2d1c0d18d10899d5df4d1d554b9da4.  #  ${token} 
       
-##2. With parameters 
+## 2. With parameters 
   - Open post man and create a new POST request 
    ```
    curl --location --request POST 'http://192.168.1.55:8080/job/helloword/buildWithParameters' \
